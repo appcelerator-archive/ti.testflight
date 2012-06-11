@@ -59,6 +59,7 @@
 {
     NSString* key;
     NSString* information;
+    ENSURE_ARG_COUNT(args, 2);
     ENSURE_ARG_AT_INDEX(key, args, 0, NSString);
     ENSURE_ARG_AT_INDEX(information, args, 1, NSString);
     [TestFlight addCustomEnvironmentInformation:information forKey:key];
@@ -80,10 +81,9 @@
  *   sendLogOnlyOnCrash          [ NSNumber numberWithBool:YES ] NO  - default, sends logs to TestFlight at the end of every session
  *                                                               YES - sends logs statements to TestFlight only if there was a crash
  */
--(void)setOptions:(id)args
+-(void)setOptions:(id)options
 {
-    NSDictionary* options;
-    ENSURE_ARG_AT_INDEX(options, args, 0, NSDictionary);
+    ENSURE_SINGLE_ARG(options, NSDictionary);
     [TestFlight setOptions:options];
 }
 
@@ -92,10 +92,9 @@
  *
  * @param checkpointName The name of the checkpoint, this should be a static string
  */
--(void)passCheckpoint:(id)args
+-(void)passCheckpoint:(id)checkpointName
 {
-    NSString* checkpointName;
-    ENSURE_ARG_AT_INDEX(checkpointName, args, 0, NSString);
+    ENSURE_SINGLE_ARG(checkpointName, NSString);
     [TestFlight passCheckpoint:checkpointName];
 }
 
@@ -104,6 +103,7 @@
  */
 -(void)openFeedbackView:(id)args
 {
+    ENSURE_UI_THREAD(openFeedbackView, args);
     [TestFlight openFeedbackView];
 }
 
@@ -113,10 +113,9 @@
  *
  * @param feedback Your users feedback, method does nothing if feedback is nil
  */
--(void)submitFeedback:(id)args
+-(void)submitFeedback:(id)feedback
 {
-    NSString* feedback;
-    ENSURE_ARG_AT_INDEX(feedback, args, 0, NSString);
+    ENSURE_SINGLE_ARG(feedback, NSString);
     [TestFlight submitFeedback:feedback];
 }
 
