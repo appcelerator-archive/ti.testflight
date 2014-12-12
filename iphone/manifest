@@ -16,4 +16,4 @@ name: testflight
 moduleid: ti.testflight
 guid: 18cc0e74-f50f-4718-a7fe-7a29b19838b8
 platform: iphone
-minsdk: 3.4.1
+minsdk: 3.4.1.GA
