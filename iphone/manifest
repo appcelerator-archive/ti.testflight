@@ -3,8 +3,7 @@
 # during compilation, packaging, distribution, etc.
 #
 version: 1.1.0
-apiversion: 2
-architectures: armeabi armeabi-v7a x86
+architectures: armv7 i386 x86_64 arm64
 description: Provides access to TestFlight's SDK.
 author: Dawson Toth
 license: Appcelerator Commercial License
