@@ -2,8 +2,8 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 1.0.1
-apiversion: 2
+version: 1.1.0
+architectures: armv7 i386 x86_64 arm64
 description: Provides access to TestFlight's SDK.
 author: Dawson Toth
 license: Appcelerator Commercial License
@@ -15,4 +15,4 @@ name: testflight
 moduleid: ti.testflight
 guid: 18cc0e74-f50f-4718-a7fe-7a29b19838b8
 platform: iphone
-minsdk: 1.8.0.1
+minsdk: 3.4.1.GA
